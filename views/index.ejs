@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>공간 목업</title>
+    <meta name="description" content="The purpose of this exhibition is to spotlight the original work of artists who are using GIFs and memes to explore and push the boundaries of these formats.">
+    <meta name="keywords" content="art, exhibition, online, crazymultiply">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="dotGIF">
+    <meta property="og:description" content="The purpose of this exhibition is to spotlight the original work of artists who are using GIFs and memes to explore and push the boundaries of these formats.">
+    <meta property="og:image" content="public/assets/thumbnail.jpg">
+    <meta property="og:url" content="http://dotgif.kr/">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="public/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="public/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="public/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="public/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="public/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="public/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="public/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="public/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="public/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="public/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="public/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="public/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- css -->
+    <link rel="stylesheet" href="public/css/lobby.css">
+</head>
+
+<body>
+    <!-- app -->
+    <div id="app">
+        <!-- header -->
+        <header id="main-header"></header>
+
+        <!-- menu -->
+        <div id="main-menu"></div>
+        <div id="main-menu-output-container"></div>
+
+        <!-- world -->
+        <div id="world"></div>
+
+        <!-- footer -->
+        <footer id="main-footer">
+        </footer>
+    </div>
+
+    <!-- mobile-keyboard -->
+    <div id="mobile-keyboard"></div>
+
+    <!-- interaction button -->
+    <!-- <div id="interaction-btn">
+        <p>OPEN-NOTICE</p>
+    </div> -->
+
+    <!-- popup -->
+    <!-- <div id="popup">
+        <p class="ko" id="message">
+            CM 팀: 전시장을 캡쳐해서 SNS에 공유해보세요! @crazymultiply를 태그해주세요!
+        </p>
+        <p class="en" id="message">
+            CM Team: Capture the exhibition hall and share it on social media! Make sure to tag us @crazymultiply!
+        </p>
+        <br>
+        <div id="close-popup">CLOSE-NOTICE</div>
+    </div> -->
+
+    <!-- inform-keyboard -->
+    <div id="inform-keyboard">
+        <p class="en"><span class="inform-key">&larr;</span> Left <span class="inform-key">&uarr;</span> Up <span class="inform-key">&rarr;</span> Right <span class="inform-key">&darr;</span> Down </p>
+        <p class="en"><span class="inform-key">Q</span> Rotate to the left</p>
+        <p class="en"><span class="inform-key">E</span> Rotate to the right</p>
+        <p class="ko"><span class="inform-key">&larr;</span> 왼쪽으로 이동 <span class="inform-key">&uarr;</span> 위로 이동 <span class="inform-key">&rarr;</span> 오른쪽으로 이동 <span class="inform-key">&darr;</span> 아래로 이동 </p>
+        <p class="ko"><span class="inform-key">Q</span> 왼쪽으로 회전 <span class="inform-key">E</span> 오른쪽으로 회전</p>
+    </div>
+
+    <!-- dark -->
+    <div id="dark" style="width: 100%; height: 100vh; background-color: black; overflow: hidden; z-index: 999999; position: fixed; opacity: 1; transition: opacity 1s ease-in-out; pointer-events: none;"></div>
+
+    <!-- loading -->
+    <div id="loading" style="width: 100%; height: 100vh; background-color: transparent; overflow: hidden; z-index: 9999999; position: fixed; opacity: 1; transition: opacity 1s ease-in-out; pointer-events: none; display: flex; align-items: center; justify-content: center;">
+        <p>LOADING...</p>
+    </div>
+</body>
+
+<!-- jquery -->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+<!-- script: create -->
+<!-- <script src="public/js/common/create-header.js"></script> -->
+<!-- <script src="public/js/common/create-menu.js"></script> -->
+<script src="public/js/common/create-keyboard.js"></script>
+
+<!-- script: common -->
+<script src="public/js/common/handle-keyboard.js"></script>
+<!-- <script src="public/js/common/handle-lang.js" type="module"></script>
+<script src="public/js/common/handle-menu.js"></script> -->
+<script src="public/js/common/threex.keyboardstate.js"></script>
+
+<!-- script: lobby -->
+<script src="public/js/lobby/lobby.js" type="module" async="false"></script>
+
+<!-- session -->
+<!-- <script src="public/js/common/handle-session.js" type="module"></script> -->
+
+<!-- <script>
+    const login = sessionStorage.getItem("login");
+    if (login === null || login === undefined || login === "") {
+        window.location.href = "/";
+    }
+</script> -->
+
+</html>
